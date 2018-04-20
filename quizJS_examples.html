@@ -7,11 +7,14 @@
         <meta name="author" content="Name Autor">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 
-        <link rel="stylesheet" type="text/css" href="assets/css/elearn.css">
-        <link rel="stylesheet" type="text/css" href="assets/css/quiz.css">
-
         <script type="text/javascript" src="assets/js/min.js"></script> <!-- von UHH verwendetes JQuery -->
-        <script type="text/javascript" src="assets/js/elearn.js"></script> <!-- eLearn.js -->
+
+        <!-- elearn.js https://github.com/elb-min-uhh/elearn.js -->
+        <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/elb-min-uhh/elearn.js/master/Template/assets/css/elearn.css">
+        <script type="text/javascript" src="https://cdn.rawgit.com/elb-min-uhh/elearn.js/master/Template/assets/js/elearn.js"></script>
+
+        <!-- quiz.js -->
+        <link rel="stylesheet" type="text/css" href="assets/css/quiz.css">
         <script type="text/javascript" src="assets/js/quiz.js"></script> <!-- Quiz Script -->
 
         <script>
@@ -1038,15 +1041,15 @@
                             -->
                             <div class="object">
                                 <!-- ID ist per MD5 verschlüsselt in dem .ans Objekt -->
-                                <img src="assets/img/logo-uhh.gif" style="height: 125px;" id="papier" draggable="false"/>
+                                <img src="assets/img/quiz-images/roter_kreis.png" style="width: 100px;" id="papier" draggable="false"/>
                             </div>
                             <div class="object">
                                 <!-- ID ist per MD5 verschlüsselt in dem .ans Objekt -->
-                                <img src="assets/img/logo-bmbf.gif" id="foerderung" draggable="false"/>
+                                <img src="assets/img/quiz-images/blauer_kreis.png" style="width: 100px;" id="foerderung" draggable="false"/>
                             </div>
 
 
-                            <br>Bild der Förderung:<br>
+                            <br>Blauer Kreis:<br>
                             <!-- ID zeigt welches .ans Objekt hierzu gehört -->
                             <!--
                             Dieses div ist eine "Zielposition". Hier kann etwas hinein-
@@ -1055,7 +1058,7 @@
                             -->
                             <div class="object destination" id="0"></div>
 
-                            <br>Bild von der Uni Hamburg:<br>
+                            <br>Roter Kreis:<br>
                             <!-- ID zeigt welches .ans Objekt hierzu gehört -->
                             <!--
                             Dieses div ist eine "Zielposition". Hier kann etwas hinein-
