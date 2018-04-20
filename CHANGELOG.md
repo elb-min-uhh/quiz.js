@@ -4,6 +4,8 @@
   * Fixes:
     * Display/Clone of previously answered questions is possible again.
     Check the documentation to see how.
+  * Other:
+    * Refactored the code. All functions and variables are stored in `quizJS`
 
 #### Older versions (currently not available in _english_)
 
