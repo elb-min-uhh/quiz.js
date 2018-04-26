@@ -110,27 +110,24 @@ was das Ziel der Frage ist.
 
 ## Selbsttests mit quiz.js
 
-Mit der quiz.js Erweiterung zum eLearn.js Projekt sind folgende Fragetypen
-relisierbar:
-
-* <a href="#" onclick="showSection('Einfach-, Mehrfach- und Bilderauswahl')">Multiple-Choice</a>
-* <a href="#" onclick="showSection('Einfach-, Mehrfach- und Bilderauswahl')">Single-Choice</a>
-* <a href="#" onclick="showSection('Einfach-, Mehrfach- und Bilderauswahl')">Wahr-Falsch</a>
-* <a href="#" onclick="showSection('Matrix oder Tabellenaufgaben')">Matrix</a>
-* <a href="#" onclick="showSection('Zuordnung (Drag and Drop)')">Zuordnung/Einordnen</a>
-* <a href="#" onclick="showSection('Sortieren (Drag and Drop)')">Rang-/Reihenfolge/Sortieren</a>
-* <a href="#" onclick="showSection('Lückentext mit Textfeldern')">Lückentext</a>
-    * <a href="#" onclick="showSection('Lückentext mit Auswahl')">mit Auswahl vorgegebener Wörter</a>
-    * <a href="#" onclick="showSection('Lückentext mit Textfeldern')">mit Eingabemöglichkeit</a>
-    * <a href="#" onclick="showSection('Lückentext mit Textfeldern')">mit Eingabe vorgegebener Wörter</a>
-    * <a href="#" onclick="showSection('Lückentext mit Textfeldern')">Ergänzung einer Tabelle/Matrix</a>
-* <a href="#" onclick="showSection('Fehlertext oder Wortmarkierung')">Markierung</a>
-    * <a href="#" onclick="showSection('Fehlertext oder Wortmarkierung')">Falsche oder richtige Wörter</a>
-    * <a href="#" onclick="showSection('Hotspot')">Hotspot</a>
-* <a href="#" onclick="showSection('Kurzantworten')">Kurztext</a>
-* <a href="#" onclick="showSection('Freitextaufgaben')">Freitext</a>
-* <a href="#" onclick="showSection('Zeichnen')">Bild/Graph zeichnen</a>
-* <a href="#" onclick="showSection('Petrinetzaufgaben')">Einfache Petrinetzaufgaben</a>
+* <a href="?s=Einfach-, Mehrfach- und Bilderauswahl: choice">Multiple-Choice</a>
+* <a href="?s=Einfach-, Mehrfach- und Bilderauswahl: choice">Single-Choice</a>
+* <a href="?s=Einfach-, Mehrfach- und Bilderauswahl: choice">Wahr-Falsch</a>
+* <a href="?s=Matrix: matrix_choice">Matrix</a>
+* <a href="?s=Zuordnung (Drag and Drop): classification">Zuordnung/Einordnen</a>
+* <a href="?s=Sortieren (Drag and Drop): order">Rang-/Reihenfolge/Sortieren</a>
+* <a href="?s=Lückentext mit Textfeldern: fill_blank">Lückentext</a>
+    * <a href="?s=Lückentext mit Auswahl: fill_blank_choice">mit Auswahl vorgegebener Wörter</a>
+    * <a href="?s=Lückentext mit Textfeldern: fill_blank">mit Eingabemöglichkeit</a>
+    * <a href="?s=Lückentext mit Textfeldern: fill_blank">mit Eingabe vorgegebener Wörter</a>
+    * <a href="?s=Lückentext mit Textfeldern: fill_blank">Ergänzung einer Tabelle/Matrix</a>
+* <a href="?s=Fehlertext oder Wortmarkierung: error_text">Markierung</a>
+    * <a href="?s=Fehlertext oder Wortmarkierung: error_text">Falsche oder richtige Wörter</a>
+    * <a href="?s=Hotspot: hotspot">Hotspot</a>
+* <a href="?s=Kurzantworten: short_text">Kurztext</a>
+* <a href="?s=Freitextaufgaben: free_text">Freitext</a>
+* <a href="?s=Zeichnen: drawing">Bild/Graph zeichnen</a>
+* <a href="?s=Petrinetzaufgaben: petri">Einfache Petrinetzaufgaben</a>
 
 
 Bei allen Fragetypen kann die eigene Antwort mit einer Musterlösung
@@ -146,7 +143,7 @@ Im folgenden werden HTML Elemente immer wieder abgekürzt beschrieben.
 Dabei handelt es sich um die CSS Schreibweisen zur Spezifikation von Elementen.
 CSS ist eine Sprache, um das Aussehen der angezeigten Seite zu definieren.
 Wie man mit CSS das Aussehen verändert wird im Abschnitt
-<a href="#" onclick="showSection('Veränderte Darstellung (CSS)')">_Veränderte Darstellung (CSS)_</a>
+<a href="?s=Veränderte Darstellung (CSS)">_Veränderte Darstellung (CSS)_</a>
 noch grundsätzlich erklärt.
 Elemente wie `<div>` werden dabei einfach nur _div_ genannt.
 Die Klassen der Elemente werden jeweils mit einem einzelnen Punkt begonnen.
@@ -156,7 +153,7 @@ _div#eins_ würde also z.B. `<div id="eins">` entsprechen.
 Diese Teile lassen sich beliebig oft aneinander hängen.
 
 
-## Manuell Quizelemente in HTML schreiben
+## Manuell Quizelemente in HTML schreiben (Beispiele)
 
 Durch die Erweiterungen in quiz.js Version 0.3.0 wurde viele Quiztypen
 hinzugefügt. Da der OSAEditor diese nicht unterstützt, lohnt sich eine
@@ -164,7 +161,8 @@ manuelle Erstellung der Elelemente im Quelltext.
 
 Um dies zu vereinfachen folgen detaillierte Beispiele. Zusätzliche Beispiele
 mit Quelltextkommentaren sind in der "quizJS_examples.html" zu finden.
-Ansehen kann man sich diese hier: <a href="quizJS_examples.html">Link</a>.
+
+Ansehen kann sich diese Beispiele hier: <a href="quizJS_examples.html">Link</a>.
 
 
 ### Grundgerüst

@@ -177,30 +177,30 @@ und Offene Situation.</p>
 relisierbar:</p>
 
 <ul>
-<li><a href="#" onclick="showSection('Einfach-, Mehrfach- und Bilderauswahl')">Multiple-Choice</a></li>
-<li><a href="#" onclick="showSection('Einfach-, Mehrfach- und Bilderauswahl')">Single-Choice</a></li>
-<li><a href="#" onclick="showSection('Einfach-, Mehrfach- und Bilderauswahl')">Wahr-Falsch</a></li>
-<li><a href="#" onclick="showSection('Matrix oder Tabellenaufgaben')">Matrix</a></li>
-<li><a href="#" onclick="showSection('Zuordnung (Drag and Drop)')">Zuordnung/Einordnen</a></li>
-<li><a href="#" onclick="showSection('Sortieren (Drag and Drop)')">Rang-/Reihenfolge/Sortieren</a></li>
-<li><a href="#" onclick="showSection('Lückentext mit Textfeldern')">Lückentext</a>
+<li><a href="?s=Einfach-, Mehrfach- und Bilderauswahl">Multiple-Choice</a></li>
+<li><a href="?s=Einfach-, Mehrfach- und Bilderauswahl">Single-Choice</a></li>
+<li><a href="?s=Einfach-, Mehrfach- und Bilderauswahl">Wahr-Falsch</a></li>
+<li><a href="?s=Matrix oder Tabellenaufgaben">Matrix</a></li>
+<li><a href="?s=Zuordnung (Drag and Drop)">Zuordnung/Einordnen</a></li>
+<li><a href="?s=Sortieren (Drag and Drop)">Rang-/Reihenfolge/Sortieren</a></li>
+<li><a href="?s=Lückentext mit Textfeldern">Lückentext</a>
 <ul>
-<li><a href="#" onclick="showSection('Lückentext mit Auswahl')">mit Auswahl vorgegebener Wörter</a></li>
-<li><a href="#" onclick="showSection('Lückentext mit Textfeldern')">mit Eingabemöglichkeit</a></li>
-<li><a href="#" onclick="showSection('Lückentext mit Textfeldern')">mit Eingabe vorgegebener Wörter</a></li>
-<li><a href="#" onclick="showSection('Lückentext mit Textfeldern')">Ergänzung einer Tabelle/Matrix</a></li>
+<li><a href="?s=Lückentext mit Auswahl">mit Auswahl vorgegebener Wörter</a></li>
+<li><a href="?s=Lückentext mit Textfeldern">mit Eingabemöglichkeit</a></li>
+<li><a href="?s=Lückentext mit Textfeldern">mit Eingabe vorgegebener Wörter</a></li>
+<li><a href="?s=Lückentext mit Textfeldern">Ergänzung einer Tabelle/Matrix</a></li>
 </ul>
 </li>
-<li><a href="#" onclick="showSection('Fehlertext oder Wortmarkierung')">Markierung</a>
+<li><a href="?s=Fehlertext oder Wortmarkierung">Markierung</a>
 <ul>
-<li><a href="#" onclick="showSection('Fehlertext oder Wortmarkierung')">Falsche oder richtige Wörter</a></li>
-<li><a href="#" onclick="showSection('Hotspot')">Hotspot</a></li>
+<li><a href="?s=Fehlertext oder Wortmarkierung">Falsche oder richtige Wörter</a></li>
+<li><a href="?s=Hotspot">Hotspot</a></li>
 </ul>
 </li>
-<li><a href="#" onclick="showSection('Kurzantworten')">Kurztext</a></li>
-<li><a href="#" onclick="showSection('Freitextaufgaben')">Freitext</a></li>
-<li><a href="#" onclick="showSection('Zeichnen')">Bild/Graph zeichnen</a></li>
-<li><a href="#" onclick="showSection('Petrinetzaufgaben')">Einfache Petrinetzaufgaben</a></li>
+<li><a href="?s=Kurzantworten">Kurztext</a></li>
+<li><a href="?s=Freitextaufgaben">Freitext</a></li>
+<li><a href="?s=Zeichnen">Bild/Graph zeichnen</a></li>
+<li><a href="?s=Petrinetzaufgaben">Einfache Petrinetzaufgaben</a></li>
 </ul>
 <p>Bei allen Fragetypen kann die eigene Antwort mit einer Musterlösung
 verglichen werden. Zudem können die geschlossenen Fragen automatisch ausgewertet
@@ -217,7 +217,7 @@ abgerufen/gezeigt, wieder geschlossen und zurückgesetzt werden.</p>
 Dabei handelt es sich um die CSS Schreibweisen zur Spezifikation von Elementen.
 CSS ist eine Sprache, um das Aussehen der angezeigten Seite zu definieren.
 Wie man mit CSS das Aussehen verändert wird im Abschnitt
-<a href="#" onclick="showSection('Veränderte Darstellung (CSS)')"><i>Veränderte Darstellung (CSS)</i></a>
+<a href="?s=Veränderte Darstellung (CSS)"><i>Veränderte Darstellung (CSS)</i></a>
 noch grundsätzlich erklärt.
 Elemente wie <em>&lt;div&gt;</em> werden dabei einfach nur <em>div</em> genannt.
 Die Klassen der Elemente werden jeweils mit einem einzelnen Punkt begonnen.
@@ -228,15 +228,15 @@ Diese Teile lassen sich beliebig oft aneinander hängen.</p>
 </section>
 
 
-<section name="Manelle Erstellung" desc="Eine grundlegende Beschreibung der technischen Umsetzung von Quizelementen mit quiz.js.">
+<section name="Manuelle Erstellung (Beispiele)" desc="Eine grundlegende Beschreibung der technischen Umsetzung von Quizelementen mit quiz.js.">
 
 <h2 id="manuell-quizelemente-in-html-schreiben">Manuell Quizelemente in HTML schreiben</h2>
 <p>Durch die Erweiterungen in quiz.js Version 0.3.0 wurde viele Quiztypen
 hinzugefügt. Da der OSAEditor diese nicht unterstützt, lohnt sich eine
 manuelle Erstellung der Elelemente im Quelltext.</p>
 <p>Um dies zu vereinfachen folgen detaillierte Beispiele. Zusätzliche Beispiele,
-mit Quelltext Kommentaren sind in der "quizJS_examples.html" zu finden.
-Ansehen kann man sich diese hier: <a href="quizJS_examples.html">Link</a></p>
+mit Quelltext Kommentaren sind in der "quizJS_examples.html" zu finden.</p>
+<p>Ansehen kann man sich diese hier: <a href="quizJS_examples.html">Link</a></p>
 </section>
 
 
