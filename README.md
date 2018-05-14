@@ -38,6 +38,24 @@ to the `<head>`. You can then use the quiz elements everywhere in the `<body>`.
 __Notice:__ You can find those files in the _assets_ folder. You might want
 to update the _href_/_src_ path when you manually copy the files.
 
+## Language Selection
+
+Per default all _quiz.js_ elements will be german. You can change this easily
+with different methods.
+
+1. A `lang` attribute will cause this node and all included _quiz.js_ nodes to
+appear in the selected language. E.g. `<html lang="en">` to change the language
+for the whole document or `<div class="question" lang="en">` for only one
+question.
+2. The `quizJS.setLanguage()` function can be used to set the language from
+inside a script. You can use this for _atom-elearnjs_ projects in the
+_meta custom_ block.
+
+Available languages are:
+* _de_: German (default)
+* _en_: English
+
+
 ## Quiz Elements
 
 There are quiz elements of several types. Please check the the

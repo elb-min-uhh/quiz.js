@@ -1,6 +1,9 @@
 ### Changelog
 
 * __0.4.2__:
+  * New features:
+    * Added language selection with `<.. lang="en">` or `quizJS.setLanguage("en")`
+      * German is the default language 
   * Fixes:
     * Fix for reset of Petri tasks
     * More consistent usage of english for classes
