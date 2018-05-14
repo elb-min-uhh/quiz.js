@@ -82,7 +82,7 @@ quizJS.initiateQuiz = function() {
     });
 
     // Buttons hinzufügen
-    $('div.question').after('<button class="quizButton">Lösen</button><button class="quizButton weiter">Zurücksetzen</button>');
+    $('div.question').after('<button class="quizButton">Lösen</button><button class="quizButton reset">Zurücksetzen</button>');
 
     // Hide Feedbacks
     $("div.question").children("div.feedback").hide();
@@ -90,8 +90,8 @@ quizJS.initiateQuiz = function() {
     // Add No Selection Feedback
     $("div.question").append('<div class="feedback noselection">Du musst diese Frage zuerst beantworten, bevor du lösen kannst.</div>');
 
-    // Hide Weiter-Buttons
-    $("button.weiter").hide();
+    // Hide reset-Buttons
+    $("button.reset").hide();
 
     quizJS.windowResizing();
     $(window).resize(function() {quizJS.windowResizing()});
@@ -176,7 +176,7 @@ quizJS.initListeners = function() {
 *                 bestimmt wird.
 */
 quizJS.submitAns = function(button, force) {
-    if($(button).filter(".weiter").length > 0) {
+    if($(button).filter(".reset").length > 0) {
         button = $(button).prev(":button");
     }
     var div = $(button).prev('div.question');
@@ -252,15 +252,15 @@ quizJS.submitAns = function(button, force) {
         }
         else if(type === quizJS.quizTypes.HOTSPOT) {
             var hss = div.find('.hotspot');
-            var gesucht = div.find('.gesucht').html();
-            var answer = div.find('a.ans').filter('[id="'+gesucht+'"]');
+            var task = div.find('.gesucht,.task').html();
+            var answer = div.find('a.ans').filter('[id="'+task+'"]');
             correct = quizJS.getCorrectHotspot(div, hss, answer, force);
             hss.filter('.act').removeClass('act');
             if(correct !== -1 && correct !== true && correct !== 2) return;
         }
         else if(type === quizJS.quizTypes.PETRI) {
             correct = quizJS.processPetri(div, force);
-            if(div.is(".unbewertet")) {
+            if(div.is(".unbewertet") || div.is(".unranked")) {
                 quizJS.deleteLabelColoring(div);
                 div.find('.feedback').hide();
             }
@@ -286,7 +286,7 @@ quizJS.submitAns = function(button, force) {
         div.children("div.feedback").filter(".noselection").show();
         return;
     }
-    else if(div.is(".unbewertet")) {
+    else if(div.is(".unbewertet") || div.is(".unranked")) {
         quizJS.deleteLabelColoring(div);
         div.children("div.feedback").filter(".noselection").hide();
         div.children("div.feedback").filter(".correct").hide();
@@ -318,7 +318,7 @@ quizJS.submitAns = function(button, force) {
     div.addClass("answered");
     div.next("button.quizButton").hide();
 
-    if(!div.is('.reset_blocked')) div.nextUntil("div").filter("button.quizButton.weiter").show();
+    if(!div.is('.reset_blocked')) div.nextUntil("div").filter("button.quizButton.reset").show();
 };
 
 
@@ -623,7 +623,7 @@ quizJS.getCorrectMatrixChoice = function(rows, answers, force) {
         }
 
         inputs.each(function(ii, ee) {
-            var ans = $(rows.find(".antwort").get(ii)).attr("id");
+            var ans = $(rows.find(".antwort,.answer").get(ii)).attr("id");
             ans = quizJS.encryptMD5(ans);
 
             // ausgewählt und richtig oder nicht ausgewählt und nicht richtig (insg richtig)
@@ -672,10 +672,10 @@ quizJS.getCorrectHotspot = function(div, hss, answer, force) {
         if(!correct) cl = "inc";
 
         hss.filter('.act').find('.descr').append("<div class='"+cl+"'>"
-                                                    + div.find('.gesucht').html()
+                                                    + div.find('.gesucht,.task').html()
                                                     + "</div>");
 
-        if(!div.is('.unbewertet')) {
+        if(!div.is('.unbewertet') && !div.is(".unranked")) {
             if(correct) {
                 div.children("div.feedback").filter(".noselection").hide();
                 div.children("div.feedback").filter(".incorrect").hide();
@@ -845,7 +845,7 @@ quizJS.initiateChoice = function() {
 quizJS.initiateFreeText = function() {
     var root = $('[qtype="'+quizJS.quizTypes.FREE_TEXT+'"]');
 
-    root.addClass("unbewertet");
+    root.addClass("unranked");
 };
 
 
@@ -1234,7 +1234,7 @@ quizJS.hotspotNextObject = function(root) {
         quizJS.shuffle(ans);
     }
 
-    root.find('.gesucht').html(ans.first().attr('id'));
+    root.find('.gesucht,.task').html(ans.first().attr('id'));
     ans.first().addClass("used");
 
     return ans.length > 0;
@@ -1355,11 +1355,11 @@ quizJS.initiatePetriImage = function() {
         div.find('.petri_image').find('img').hide();
         div.find('.petri_image').find('img').first().show();
 
-        div.find('.petri_aufgabe').find('img').hide();
-        div.find('.petri_aufgabe').find(
+        div.find('.petri_aufgabe,.petri_task').find('img').hide();
+        div.find('.petri_aufgabe,.petri_task').find(
             '#'+div.find('.petri_image').find('img').first().attr("id")).show();
 
-        div.find('.gesucht').html(div.find('.petri_image').find('img').first().attr("task"));
+        div.find('.gesucht,.task').html(div.find('.petri_image').find('img').first().attr("task"));
 
         // Klicken auf Hotspot
         div.find('.place').click(function() {
@@ -1413,15 +1413,15 @@ quizJS.petriNextImage = function(div) {
 };
 
 quizJS.petriNextAufgabenImage = function(div) {
-    div.find('.petri_aufgabe').find('img').hide();
-    div.find('.petri_aufgabe').find('#'+div.find('.petri_image').find('img:visible').attr("id")).show();
+    div.find('.petri_aufgabe,.petri_task').find('img').hide();
+    div.find('.petri_aufgabe,.petri_task').find('#'+div.find('.petri_image').find('img:visible').attr("id")).show();
 };
 
 quizJS.petriNextPart = function(div) {
     div.find('.feedback').hide();
     quizJS.petriNextImage(div);
     quizJS.petriNextAufgabenImage(div);
-    div.find('.gesucht').html(div.find('.petri_image').find('img:visible').attr("task"));
+    div.find('.gesucht,.task').html(div.find('.petri_image').find('img:visible').attr("task"));
 };
 
 quizJS.petriFinished = function(div) {
@@ -1784,17 +1784,18 @@ quizJS.resetQuestion = function(div) {
     div.find('.hotspot').find('.descr').children().remove();
 
     // petrinetz
-    div.find('.petri_image').find('img').hide();
+    div.filter('[qtype="'+quizJS.quizTypes.PETRI+'"]').find('.petri_image').find('img').hide();
+    div.filter('[qtype="'+quizJS.quizTypes.PETRI+'"]').find('.petri_aufgabe,.petri_task').find('img').hide();
     // erste aufgabe anzeigen
-    div.find('.petri_image').find('img').first().show();
-    div.filter('[qtype="'+quizJS.quizTypes.PETRI+'"]').find('.petri_aufgabe').find('img')
+    div.filter('[qtype="'+quizJS.quizTypes.PETRI+'"]').find('.petri_image').find('img').first().show();
+    div.filter('[qtype="'+quizJS.quizTypes.PETRI+'"]').find('.petri_aufgabe,.petri_task').find('img')
         .filter('#'+div.find('.petri_image').find('img:visible').attr("id")).show();
-    div.filter('[qtype="'+quizJS.quizTypes.PETRI+'"]').find('.gesucht').html(div.find('.petri_image').find('img').first().attr("task"));
+    div.filter('[qtype="'+quizJS.quizTypes.PETRI+'"]').find('.gesucht,.task').html(div.find('.petri_image').find('img').first().attr("task"));
 
     quizJS.resetCanvas(div);
 
     div.nextAll("button.quizButton").first().show();
-    div.nextAll("button.quizButton.weiter").first().hide();
+    div.nextAll("button.quizButton.reset").first().hide();
 };
 
 /**
@@ -1837,7 +1838,7 @@ quizJS.initiateDrawingCanvas = function() {
     root.each(function(i,e) {
         var div = $(this);
 
-        div.addClass("unbewertet");
+        div.addClass("unranked");
 
         quizJS.resetCanvas(div);
 

@@ -266,7 +266,7 @@ Block indem Antworten stehen
     Falsch
 &lt;/div&gt;
 
-&lt;!-- Verschlüsselt ist hier das Wort "antwort" --&gt;
+&lt;!-- Verschlüsselt ist hier das Wort "answer" --&gt;
 &lt;a class=&quot;ans&quot;&gt;693da517cf61c81742ef090221bfd5d6&lt;/a&gt;
 &lt;/div&gt;
 </code></pre>
@@ -350,7 +350,7 @@ Unter- oder Durchstreichen</li>
 
 <section name="Antworten" class="sub">
 
-<h3 id="antworten">Antworten</h3>
+<h3 id="answeren">Antworten</h3>
 <pre><code>&lt;div class=&quot;answers&quot;&gt;
   &lt;label&gt;Lösung: &lt;input type=&quot;text&quot; name=&quot;q&quot;/&gt;&lt;/label&gt;
 &lt;/div&gt;
@@ -421,7 +421,7 @@ Bereiche wie in dem Grundgerüst gezeigt aufteilen.</p>
 
 <h3 id="angabe-der-richtigen-antworten">Angabe der richtigen Antworten</h3>
 <p>Für jede richtige Antwort wird genau ein <em>a</em> Block verwendet.</p>
-<pre><code>&lt;!-- Verschlüsselt ist hier das Wort "antwort" --&gt;
+<pre><code>&lt;!-- Verschlüsselt ist hier das Wort "answer" --&gt;
 &lt;a class=&quot;ans&quot;&gt;693da517cf61c81742ef090221bfd5d6&lt;/a&gt;
 </code></pre>
 <p>Der Text der in diesem Block steht ist der Wert des <strong>value</strong> Feldes
@@ -460,7 +460,7 @@ in ihrer Funktionsweise und Verwendung erklärt.</p>
 <div class="question" qtype="short_text" id="q_short_text_2">
 <h4>
   <b>Frage 1:</b><br>
-  Gib das Wort "antwort" ein.
+  Gib das Wort "answer" ein.
 </h4> <!-- Fragetext -->
 
 <!--
@@ -942,8 +942,8 @@ folgendes ergibt:</p>
     <table class="matrix">
             <tr>
                 <td>Aufgabe</td>
-                <th id="wahr" class="antwort">Wahr</th>
-                <th id="falsch" class="antwort">Falsch</th>
+                <th id="wahr" class="answer">Wahr</th>
+                <th id="falsch" class="answer">Falsch</th>
             </tr>
 
             <tr id="0">
@@ -992,8 +992,8 @@ zurückgegriffen:</p>
     &lt;table class=&quot;matrix&quot;&gt;
         &lt;tr&gt;
             &lt;td&gt;Aufgabe&lt;/td&gt;
-            &lt;th id=&quot;wahr&quot; class=&quot;antwort&quot;&gt;Wahr&lt;/th&gt;
-            &lt;th id=&quot;falsch&quot; class=&quot;antwort&quot;&gt;Falsch&lt;/th&gt;
+            &lt;th id=&quot;wahr&quot; class=&quot;answer&quot;&gt;Wahr&lt;/th&gt;
+            &lt;th id=&quot;falsch&quot; class=&quot;answer&quot;&gt;Falsch&lt;/th&gt;
         &lt;/tr&gt;
 
         &lt;tr id=&quot;0&quot;&gt;
@@ -1019,13 +1019,13 @@ verwendet um die Antwortmöglichkeiten hervozuheben.
 In jeder Zeile <em>tr</em> müssen sich zusammengerechnet die gleiche
 Anzahl an <em>td</em> und <em>th</em> befinden.</p>
 <p><strong>Erste Zeile</strong>:
-Die <em>id</em> der beiden <em>th.antwort</em> wird für die Angabe der richtigen
+Die <em>id</em> der beiden <em>th.answer</em> wird für die Angabe der richtigen
 Antworten jeder Zeile benötigt. Sie sollte also für jede
 Antwortmöglichkeit einzigartig sein. Die Klasse <em>antwort</em> muss bei
 den vorgegebenen Antwortmöglichkeiten beibehalten bleiben.
-Innerhalb der <em>th.antwort</em> steht nun der Text der angezeigt wird.
+Innerhalb der <em>th.answer</em> steht nun der Text der angezeigt wird.
 Möchte man eine größere Auswahl an Antwortmöglichkeiten haben,
-können weitere <em>th.antwort</em> Elemente dort eingefügt werden.</p>
+können weitere <em>th.answer</em> Elemente dort eingefügt werden.</p>
 <p>Nach der ersten Zeile kommen dann die eigentlichen Aufgaben.
 Jede Zeile muss eine einzigartige <em>id</em> bekommen (abgesehen von der
 obersten Zeile). Diese können z.B. durchnummeriert werden.
@@ -1042,7 +1042,7 @@ Merhfachauswahl
 <p>Um hier nun die richtigen Antworten anzugeben, muss man einige Dinge
 beachten. Angegeben werden nur die Boxen, die markiert werden sollen.
 Die <em>id</em> des <em>a.ans</em> entspricht der <em>id</em> der Zeile zu der
-die Antwort gehört. Verschlüsselt wird die <em>id</em> des <em>th.antwort</em>,
+die Antwort gehört. Verschlüsselt wird die <em>id</em> des <em>th.answer</em>,
 welches richtig ist.</p>
 <p>Im oberen Beispiel ist die Antwort der Zeile mit der <em>id</em> 0 &quot;wahr&quot;, also
 wird die <em>id</em> &quot;wahr&quot; verschlüsselt.
@@ -1066,7 +1066,7 @@ bei Mehrfachauswahl möglich.</p>
 
     Markiere die Stelle an die der folgende Begriff gehört:
     <!--
-    das span element mit der Klasse gesucht wird genutzt
+    das span element mit der Klasse `task` wird genutzt
     um die Bezeichnung des gesuchten Elements anzuzeigen.
     Dieser Block kann frei verschoben werden, jenachdem
     wo er für die Frage gut hinpasst.
@@ -1074,7 +1074,7 @@ bei Mehrfachauswahl möglich.</p>
     werden.
     Die Schachtelung in ein <b> sorgt für das fettdrucken.
     -->
-    <b><span class="gesucht"></span></b>
+    <b><span class="task"></span></b>
     <br>
 
     <div class="answers">
@@ -1177,11 +1177,11 @@ per Probieren angepasst werden. Sichtbar sind die Punkte nur, wenn die
 Maus auf dem Bild liegt.
 Es können beliebig viele Punkte hinzugefügt werden, diese müssen
 lediglich eine unterschiedliche <em>id</em> haben.</p>
-<p>Angegebene Begriffe werden in dem <em>span.gesucht</em> angezeigt. Dieses kann frei
+<p>Angegebene Begriffe werden in dem <em>span.task</em> angezeigt. Dieses kann frei
 innerhalb des Fragenblocks platziert werden. Die Begriffe werden bei der Angabe
 der richtigen Antworten erstellt. Ein möglicher Text der die Begriffe abfragt
 könnte wie folgt aussehen:</p>
-<pre><code>Markiere &lt;b&gt;&lt;span class=&quot;gesucht&quot;&gt;&lt;/span&gt;&lt;/b&gt; in dem Bild.
+<pre><code>Markiere &lt;b&gt;&lt;span class=&quot;task&quot;&gt;&lt;/span&gt;&lt;/b&gt; in dem Bild.
 </code></pre>
 <p>Um die abgefragten Begriffe anzugeben und den Punkten zuzuordnen werden
 die <em>a.ans</em> verwendet. In diesem Fall entspricht die <em>id</em> des <em>a.ans</em>
@@ -1516,12 +1516,12 @@ größer und erhält somit die Poisition &quot;2&quot;. Es darf <strong>niemals<
 
     Markiere die Plätze an denen mindestens eine Marke
     vorhanden ist, wenn Transition
-    <b><span class="gesucht"></span></b> geschaltet wird.
+    <b><span class="task"></span></b> geschaltet wird.
 
     <br><br>
 
     Hier die Ausgangssituation:<br>
-    <div class="petri_aufgabe" style="max-width: 600px; width: 80%;">
+    <div class="petri_task" style="max-width: 600px; width: 80%;">
         <img id="0" src="assets/img/quiz-images/producerConsumer.jpg"/>
         <img id="1" src="assets/img/quiz-images/producerConsumer_1.jpg"/>
         <img id="2" src="assets/img/quiz-images/producerConsumer.jpg"/>
@@ -1619,12 +1619,12 @@ in den Bildern die Felder <em>task</em> definiert. Hier kann man z.B. den Namen
 einer Transition eingeben und den Text dann so formulieren, dass immer nur
 der Transitionsname ausgetauscht wird. Um diese individuellen Tasks in
 seinen Aufgabentext einzubauen kann man folgenden Block einfügen:</p>
-<pre><code>&lt;span class=&quot;gesucht&quot;&gt;&lt;/span&gt;
+<pre><code>&lt;span class=&quot;task&quot;&gt;&lt;/span&gt;
 
 Beispiel:
 Markiere die Plätze an denen mindestens eine Marke
 vorhanden ist, wenn Transition
-&lt;b&gt;&lt;span class=&quot;gesucht&quot;&gt;&lt;/span&gt;&lt;/b&gt; geschaltet wird.
+&lt;b&gt;&lt;span class=&quot;task&quot;&gt;&lt;/span&gt;&lt;/b&gt; geschaltet wird.
 </code></pre>
 <p>Sollte man extra zu jedem Schritt eine Ausgangssituation anzeigen wollen
 und als Hintergrundbild, auf dem die Plätze markiert werden müssen, dann ein
@@ -1634,7 +1634,7 @@ Aufgabenstellung die Ausgangssituation anzeigen lassen. Dazu wird ähnlich
 wie mit den Tasks ein Block eingefügt, indem zu jedem Schritt ein weiteres
 Bild definiert ist. Beispiel:</p>
 <pre><code>Hier die Ausgangssituation:
-&lt;div class=&quot;petri_aufgabe&quot;&gt;
+&lt;div class=&quot;petri_task&quot;&gt;
     &lt;img id=&quot;0&quot; src=&quot;assets/img/producerConsumer.jpg&quot;/&gt;
     &lt;img id=&quot;1&quot; src=&quot;assets/img/producerConsumer_1.jpg&quot;/&gt;
 &lt;/div&gt;
@@ -1820,12 +1820,12 @@ Welche Funktionen möglich sind, wird im folgenden Bereich erklärt.</p>
 <h3 id="unbewertete-fragen">Unbewertete Fragen</h3>
 <p>Es gibt neuere Fragetypen die nicht bewertet werden können oder sollen.
 Dies kann auch bei Auswahlfragen der Fall sein. Hierzu gibt es die Möglichkeit,
-Fragen als <em>unbewertet</em> zu kennzeichnen. Nach dem beantworten der Frage, kann
+Fragen als <em>unranked</em> zu kennzeichnen. Nach dem beantworten der Frage, kann
 dann eine allgemeine Rückmeldung angezeigt werden, die Antworten werden aber
 nicht als richtig oder falsch markiert.</p>
-<p>Um dies zu erreichen, wird ganz dem <em>div.question</em> die Klasse <em>unbewertet</em>
+<p>Um dies zu erreichen, wird ganz dem <em>div.question</em> die Klasse <em>unranked</em>
 hinzugefügt. Das ganze sieht dann zum Beispiel so aus:</p>
-<pre><code>&lt;div class=&quot;question unbewertet&quot; qtype=&quot;choice&quot; id=&quot;choice_1&quot;&gt;
+<pre><code>&lt;div class=&quot;question unranked&quot; qtype=&quot;choice&quot; id=&quot;choice_1&quot;&gt;
 </code></pre>
 <p>Bei unbewerteten Fragen, wird nicht wie gewöhnlich der Feedbackblock für richtig
 oder falsch angezeigt sondern ein zusätzlicher, der statt <em>correct</em> oder <em>incorrect</em>
@@ -1837,14 +1837,14 @@ die Klasse <em>information</em> hat. Dieser sieht dann beispielsweise so aus:</p
 </code></pre>
 <p>Bei unbewerteten Fragen können alle <em>a.ans</em> weggelassen werden.</p>
 <p>Ein Beispiel für eine unbewertete Frage:</b><br>
-<div class="question unbewertet" qtype="matrix_choice" id="ub_1">
+<div class="question unranked" qtype="matrix_choice" id="ub_1">
     <h4>Wähle aus, ob die Aussagen wahr oder falsch sind</h4>
     <div class="answers single">
     <table class="matrix">
             <tr>
                 <td>Aufgabe</td>
-                <th id="wahr" class="antwort">Wahr</th>
-                <th id="falsch" class="antwort">Falsch</th>
+                <th id="wahr" class="answer">Wahr</th>
+                <th id="falsch" class="answer">Falsch</th>
             </tr>
 
             <tr id="0">

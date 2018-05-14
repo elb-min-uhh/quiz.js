@@ -1,5 +1,9 @@
 ### Changelog
 
+* __0.4.2__:
+  * Fixes:
+    * Fix for reset of Petri tasks
+    * More consistent usage of english for classes
 * __0.4.1__:
   * Fixes:
     * Display/Clone of previously answered questions is possible again.

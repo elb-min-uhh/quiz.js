@@ -689,7 +689,7 @@
 
                         Markiere die Stelle an die der folgende Begriff gehört:
                         <!--
-                        das span element mit der Klasse gesucht wird genutzt
+                        das span element mit der Klasse `task` wird genutzt
                         um die Bezeichnung des gesuchten Elements anzuzeigen.
                         Dieser Block kann frei verschoben werden, jenachdem
                         wo er für die Frage gut hinpasst.
@@ -697,7 +697,7 @@
                         werden.
                         Die Schachtelung in ein <b> sorgt für das fettdrucken.
                         -->
-                        <b><span class="gesucht"></span></b>
+                        <b><span class="task"></span></b>
                         <br>
 
                         <div class="answers">
@@ -820,7 +820,7 @@
                                     <td>Aufgabe</td>
 
                                     <!--
-                                    Das class="antwort" muss an jeder Antwortmöglichkeit stehen (wie hier)
+                                    Das class="answer" muss an jeder Antwortmöglichkeit stehen (wie hier)
                                     Die hier verwendete ID ist per MD5 verschlüsselt als Inhalt in den
                                     a.ans anzugeben.
                                     Ist also in der Zeile mit der ID=1 (<tr id="1">) die Antwort "gueltig"
@@ -829,9 +829,9 @@
                                     exisiteren. Der verschluesselte Wert entspricht dabei "gueltig",
                                     die ID muss übereinstimmen mit der ID der Zeile.
                                     -->
-                                    <th id="ungueltig" class="antwort">Ungültig</th>
-                                    <th id="gueltig" class="antwort">Gültig</th>
-                                    <th id="nicht0" class="antwort">Ergebnis ist nicht 0 (nur bei gültig)</th>
+                                    <th id="ungueltig" class="answer">Ungültig</th>
+                                    <th id="gueltig" class="answer">Gültig</th>
+                                    <th id="nicht0" class="answer">Ergebnis ist nicht 0 (nur bei gültig)</th>
                                 </tr>
                                 <tr id="0">
 
@@ -933,7 +933,7 @@
                                     <td>Aufgabe</td>
 
                                     <!--
-                                    Das class="antwort" muss an jeder Antwortmöglichkeit stehen (wie hier)
+                                    Das class="answer" muss an jeder Antwortmöglichkeit stehen (wie hier)
                                     Die hier verwendete ID ist per MD5 verschlüsselt als Inhalt in den
                                     a.ans anzugeben.
                                     Ist also in der Zeile mit der ID=1 (<tr id="1">) die Antwort "gueltig"
@@ -942,8 +942,8 @@
                                     exisiteren. Der verschluesselte Wert entspricht dabei "gueltig",
                                     die ID muss übereinstimmen mit der ID der Zeile.
                                     -->
-                                    <th id="ungueltig" class="antwort">Ungültig</th>
-                                    <th id="gueltig" class="antwort">Gültig</th>
+                                    <th id="ungueltig" class="answer">Ungültig</th>
+                                    <th id="gueltig" class="answer">Gültig</th>
                                 </tr>
                                 <tr id="0">
                                     <td>3 +: 5</td>
@@ -1579,7 +1579,7 @@
                     reset_blocked sorgt dafür das man eine Frage nicht (so einfach)
                     zurücksetzen kann, um sie erneut zu beantworten
                     -->
-                    <div class="question unbewertet reset_blocked" qtype="petri" id="pe_1" max-time="99">
+                    <div class="question unranked reset_blocked" qtype="petri" id="pe_1" max-time="99">
                         <h4>Petrinetz</h4>
 
                         <!-- -->
@@ -1597,7 +1597,7 @@
                         Hintergrundbild aus .petri_image dazu ist "leer" (alle Plätze leer).
                         So ist es in diesem Beispiel.
                         -->
-                        <div class="petri_aufgabe" style="max-width: 60%;">
+                        <div class="petri_task" style="max-width: 60%;">
                             <img id="0" src="assets/img/quiz-images/producerConsumer.jpg"/>
                             <img id="1" src="assets/img/quiz-images/producerConsumer_1.jpg"/>
                         </div>
@@ -1611,7 +1611,7 @@
                             auf dem die Punkte sichtbar sind die markiert werden können.
                             Hier können bspw. alle Plätze leer sein. Man kann oben z.B. eine
                             Ausgangssituation zu der Aufgabe explizit anzeigen lassen.
-                            Dazu muss in .petri_aufgabe ein Bild mit derselben ID vorhanden
+                            Dazu muss in .petri_task ein Bild mit derselben ID vorhanden
                             sein.
                             task="..." definiert das was bei .gesucht oben eingesetzt wird.
                             -->
@@ -1709,7 +1709,7 @@
                         Hintergrundbild aus .petri_image dazu ist "leer" (alle Plätze leer).
                         So ist es in diesem Beispiel.
                         -->
-                        <div class="petri_aufgabe" style="max-width: 60%;">
+                        <div class="petri_task" style="max-width: 60%;">
                             <img id="0" src="assets/img/quiz-images/petrinetz_1.png"/>
                         </div>
                         <br>
@@ -1722,7 +1722,7 @@
                             auf dem die Punkte sichtbar sind die markiert werden können.
                             Hier können bspw. alle Plätze leer sein. Man kann oben z.B. eine
                             Ausgangssituation zu der Aufgabe explizit anzeigen lassen.
-                            Dazu muss in .petri_aufgabe ein Bild mit derselben ID vorhanden
+                            Dazu muss in .petri_task ein Bild mit derselben ID vorhanden
                             sein.
                             task="..." definiert das was bei .gesucht oben eingesetzt wird.
                             -->

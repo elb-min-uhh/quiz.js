@@ -495,7 +495,8 @@ button.quizButton:hover, button.quizButton:active {
 
 /* ----------------------------- PETRI-NETZ ------------------------------ */
 
-.question[qtype="petri"] .petri_aufgabe {
+.question[qtype="petri"] .petri_aufgabe,
+.question[qtype="petri"] .petri_task {
     position: relative;
     overflow-y: auto;
     display: inline-block;

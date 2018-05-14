@@ -190,7 +190,7 @@ Ansehen kann sich diese Beispiele hier: <a href="quizJS_examples.html">Link</a>.
         Falsch
     </div>
 
-    <!-- Verschlüsselt ist hier das Wort "antwort" -->
+    <!-- Verschlüsselt ist hier das Wort "answer" -->
     <a class="ans">693da517cf61c81742ef090221bfd5d6</a>
     </div>
 
@@ -343,7 +343,7 @@ Bereiche wie in dem Grundgerüst gezeigt aufteilen.
 
 Für jede richtige Antwort wird genau ein _a_ Block verwendet.
 
-    <!-- Verschlüsselt ist hier das Wort "antwort" -->
+    <!-- Verschlüsselt ist hier das Wort "answer" -->
     <a class="ans">693da517cf61c81742ef090221bfd5d6</a>
 
 Der Text der in diesem Block steht ist der Wert des __value__ Feldes
@@ -382,7 +382,7 @@ Beispiel:
 <div class="question" qtype="short_text" id="q_short_text_2">
     <h4>
       <b>Frage 1:</b><br>
-      Gib das Wort "antwort" ein.
+      Gib das Wort "answer" ein.
     </h4> <!-- Fragetext -->
 
     <!--
@@ -876,11 +876,11 @@ Ein Beispiel für eine Matrixaufgabe:
 <div class="question" qtype="matrix_choice" id="mc_1">
     <h4>Wähle aus, ob die Aussagen richtig oder falsch sind</h4>
     <div class="answers single">
-    <table class="matrix">
+        <table class="matrix">
             <tr>
                 <td>Aufgabe</td>
-                <th id="wahr" class="antwort">Wahr</th>
-                <th id="falsch" class="antwort">Falsch</th>
+                <th id="wahr" class="answer">Wahr</th>
+                <th id="falsch" class="answer">Falsch</th>
             </tr>
 
             <tr id="0">
@@ -931,8 +931,8 @@ zurückgegriffen:
         <table class="matrix">
             <tr>
                 <td>Aufgabe</td>
-                <th id="wahr" class="antwort">Wahr</th>
-                <th id="falsch" class="antwort">Falsch</th>
+                <th id="wahr" class="answer">Wahr</th>
+                <th id="falsch" class="answer">Falsch</th>
             </tr>
 
             <tr id="0">
@@ -959,13 +959,13 @@ In jeder Zeile _tr_ müssen sich zusammengerechnet die gleiche
 Anzahl an _td_ und _th_ befinden.
 
 __Erste Zeile__:
-Die _id_ der beiden _th.antwort_ wird für die Angabe der richtigen
+Die _id_ der beiden _th.answer_ wird für die Angabe der richtigen
 Antworten jeder Zeile benötigt. Sie sollte also für jede
 Antwortmöglichkeit einzigartig sein. Die Klasse _antwort_ muss bei
 den vorgegebenen Antwortmöglichkeiten beibehalten bleiben.
-Innerhalb der _th.antwort_ steht nun der Text der angezeigt wird.
+Innerhalb der _th.answer_ steht nun der Text der angezeigt wird.
 Möchte man eine größere Auswahl an Antwortmöglichkeiten haben,
-können weitere _th.antwort_ Elemente dort eingefügt werden.
+können weitere _th.answer_ Elemente dort eingefügt werden.
 
 Nach der ersten Zeile kommen dann die eigentlichen Aufgaben.
 Jede Zeile muss eine einzigartige _id_ bekommen (abgesehen von der
@@ -985,7 +985,7 @@ _div.answers_ die zusätzliche Klasse _single_ oder _multiple_:
 Um hier nun die richtigen Antworten anzugeben, muss man einige Dinge
 beachten. Angegeben werden nur die Boxen, die markiert werden sollen.
 Die _id_ des _a.ans_ entspricht der _id_ der Zeile zu der
-die Antwort gehört. Verschlüsselt wird die _id_ des _th.antwort_,
+die Antwort gehört. Verschlüsselt wird die _id_ des _th.answer_,
 welches richtig ist.
 
 Im oberen Beispiel ist die Antwort der Zeile mit der _id_ 0 "wahr", also
@@ -1009,7 +1009,7 @@ Ein Beispiel für eine Hotspot-Aufgabe:
 
     Markiere die Stelle an die der folgende Begriff gehört:
     <!--
-    das span element mit der Klasse gesucht wird genutzt
+    das span element mit der Klasse `task` wird genutzt
     um die Bezeichnung des gesuchten Elements anzuzeigen.
     Dieser Block kann frei verschoben werden, jenachdem
     wo er für die Frage gut hinpasst.
@@ -1017,7 +1017,7 @@ Ein Beispiel für eine Hotspot-Aufgabe:
     werden.
     Die Schachtelung in ein <b> sorgt für das fettdrucken.
     -->
-    <b><span class="gesucht"></span></b>
+    <b><span class="task"></span></b>
     <br>
 
     <div class="answers">
@@ -1485,7 +1485,7 @@ Ein Beispiel für eine Petrinetzaufgabe:
     <br><br>
 
     Hier die Ausgangssituation:<br>
-    <div class="petri_aufgabe" style="max-width: 600px; width: 80%;">
+    <div class="petri_task" style="max-width: 600px; width: 80%;">
         <img id="0" src="assets/img/quiz-images/producerConsumer.jpg"/>
         <img id="1" src="assets/img/quiz-images/producerConsumer_1.jpg"/>
         <img id="2" src="assets/img/quiz-images/producerConsumer.jpg"/>
@@ -1605,7 +1605,7 @@ wie mit den Tasks ein Block eingefügt, indem zu jedem Schritt ein weiteres
 Bild definiert ist. Beispiel:
 
     Hier die Ausgangssituation:
-    <div class="petri_aufgabe">
+    <div class="petri_task">
         <img id="0" src="assets/img/producerConsumer.jpg"/>
         <img id="1" src="assets/img/producerConsumer_1.jpg"/>
     </div>
@@ -1797,14 +1797,14 @@ Welche Funktionen möglich sind, wird im folgenden Bereich erklärt.
 
 Es gibt neuere Fragetypen die nicht bewertet werden können oder sollen.
 Dies kann auch bei Auswahlfragen der Fall sein. Hierzu gibt es die Möglichkeit,
-Fragen als _unbewertet_ zu kennzeichnen. Nach dem beantworten der Frage, kann
+Fragen als _unranked_ zu kennzeichnen. Nach dem beantworten der Frage, kann
 dann eine allgemeine Rückmeldung angezeigt werden, die Antworten werden aber
 nicht als richtig oder falsch markiert.
 
-Um dies zu erreichen, wird ganz dem _div.question_ die Klasse _unbewertet_
+Um dies zu erreichen, wird ganz dem _div.question_ die Klasse _unranked_
 hinzugefügt. Das ganze sieht dann zum Beispiel so aus:
 
-    <div class="question unbewertet" qtype="choice" id="choice_1">
+    <div class="question unranked" qtype="choice" id="choice_1">
 
 Bei unbewerteten Fragen, wird nicht wie gewöhnlich der Feedbackblock für richtig
 oder falsch angezeigt sondern ein zusätzlicher, der statt _correct_ oder _incorrect_
@@ -1819,14 +1819,14 @@ Bei unbewerteten Fragen können alle _a.ans_ weggelassen werden.
 
 Ein Beispiel für eine unbewertete Frage:
 
-<div class="question unbewertet" qtype="matrix_choice" id="ub_1">
+<div class="question unranked" qtype="matrix_choice" id="ub_1">
     <h4>Wähle aus, ob die Aussagen wahr oder falsch sind</h4>
     <div class="answers single">
     <table class="matrix">
             <tr>
                 <td>Aufgabe</td>
-                <th id="wahr" class="antwort">Wahr</th>
-                <th id="falsch" class="antwort">Falsch</th>
+                <th id="wahr" class="answer">Wahr</th>
+                <th id="falsch" class="answer">Falsch</th>
             </tr>
 
             <tr id="0">
