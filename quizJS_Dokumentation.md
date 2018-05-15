@@ -382,7 +382,7 @@ Beispiel:
 <div class="question" qtype="short_text" id="q_short_text_2">
     <h4>
       <b>Frage 1:</b><br>
-      Gib das Wort "answer" ein.
+      Gib das Wort "antwort" ein.
     </h4> <!-- Fragetext -->
 
     <!--
