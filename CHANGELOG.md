@@ -1,6 +1,9 @@
 ### Changelog
 
-* __0.4.3__: 
+* __0.4.3__:
+  * New features:
+    * CSS -> SASS/SCSS: use variables for color styling
+    * changed a few colors
   * Fixes:
     * Undefined `lang-code`s will not overwrite element texts
 * __0.4.2__:
