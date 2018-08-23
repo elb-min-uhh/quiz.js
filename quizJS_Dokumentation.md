@@ -1896,9 +1896,9 @@ JavaScript Aufruf umgehen kann man bei der Frage zusätzlich zu der Klasse
         Hier werden alle richtigen Antwortmöglichkeiten angegeben.
         Unverschlüsselt
         -->
-        <a class="ans">assets</a>
-        <a class="ans">img</a>
-        <a class="ans">css</a>
+        <a class="ans">Frage-1</a>
+        <a class="ans">Frage-3</a>
+        <a class="ans">Frage-4</a>
     </div>
 
 ### Nicht zurücksetzbare Fragen
