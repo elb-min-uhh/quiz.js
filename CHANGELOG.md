@@ -1,5 +1,7 @@
 ### Changelog
 
+* __0.4.4__:
+  * Allow unencrypted answers
 * __0.4.3__:
   * New features:
     * CSS -> SASS/SCSS: use variables for color styling

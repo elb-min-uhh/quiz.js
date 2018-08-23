@@ -420,7 +420,10 @@ Bereiche wie in dem Grundgerüst gezeigt aufteilen.</p>
 <section name="Angabe der richtigen Antworten" class="sub">
 
 <h3 id="angabe-der-richtigen-antworten">Angabe der richtigen Antworten</h3>
-<p>Für jede richtige Antwort wird genau ein <em>a</em> Block verwendet.</p>
+<p>Für jede richtige Antwort wird genau ein <em>a</em> Block verwendet.
+Möchte man die Antworten nicht verschlüsseln, gibt es dazu Möglichkeiten,
+die im Bereich <em>Nicht verschlüsselte Fragen</em> unter
+<em>Erweiterbarkeit der normalen Funktionen</em> erklärt werden.</p>
 <pre><code>&lt;!-- Verschlüsselt ist hier das Wort "answer" --&gt;
 &lt;a class=&quot;ans&quot;&gt;693da517cf61c81742ef090221bfd5d6&lt;/a&gt;
 </code></pre>
@@ -429,7 +432,7 @@ der jeweiligen Antwort, bzw. bei Texteingaben einfach die gewünschte
 Eingabe, per md5 verschlüsselt. Natürlich sollte man hier nicht immer die
 unverschlüsselte Version direkt darüber schreiben. Dies ist nur als Hilfe
 gedacht.</p>
-<p>Zur generierung der MD5-Verschlüsselten Antworten eignet sich z.B.
+<p>Zur Generierung der MD5-Verschlüsselten Antworten eignet sich z.B.
 <a href="http://www.md5-generator.de/">http://www.md5-generator.de/</a> . Man sollte darauf achten, keine zusätzlichen
 Leerzeichen oder Zeilenumbrüche dort einzugeben.</p>
 <p>Bei mehreren richtigen Antworten stehen also einfach mehrere <em>a</em> Blöcke
@@ -1061,7 +1064,7 @@ bei Mehrfachauswahl möglich.</p>
 
 <h3 id="hotspot-hotspot">Hotspot: <em>hotspot</em></h3>
 <p>Ein Beispiel für eine Hotspot-Aufgabe:</p>
-<div class="question" qtype="hotspot" id="hs_1">
+<div class="question unencrypted" qtype="hotspot" id="hs_1">
     <h4>Hotspot</h4>
 
     Markiere die Stelle an die der folgende Begriff gehört:
@@ -1869,6 +1872,48 @@ die Klasse <em>information</em> hat. Dieser sieht dann beispielsweise so aus:</p
 </div>
 </section>
 
+<section name="Nicht verschlüsselte Fragen" class="sub"><h3 id="nichtverschlsseltefragen">Nicht verschlüsselte Fragen</h3>
+    <p>Die korrekten Antworten müssen bei bewerteten Fragen als HD5 gehashte Werte
+    angegeben werden. Das sorgt vor Allem für einen zusätzlichen Erstellungsaufwand.
+    Möchte man nicht verhindern, dass Nutzer in dem Quelltext die korrekte Antwort
+    lesen können, gibt es zwei einfache Möglichkeiten, dieses Hashing zu umgehen.</p>
+    <h4 id="generelldeaktivieren">Generell deaktivieren</h4>
+    <p>Möchte man für keine Frage verschlüsselte Antworten angeben, kann man per
+    JavaScript Aufruf <code>quizJS.setEncrypted(false)</code> die Verschlüsselung deaktivieren.
+    Das bedeutet, dass überall in den <code>&lt;a class="ans"&gt;</code> direkt die unverschlüsselte
+    Antwort hinterlegen kann.</p>
+    <h4 id="fragenspezifischdeaktiveren">Fragenspezifisch deaktiveren</h4>
+    <p>Möchte man nur für einzelne Fragen die Verschlüsselung deaktiveren oder den
+    JavaScript Aufruf umgehen kann man bei der Frage zusätzlich zu der Klasse
+    <code>question</code> die Klasse <code>unencrypted</code> ergänzen:</p>
+    <pre><code>&lt;!-- hier steht die zusätzliche Klasse --&gt;
+    &lt;div class="question unencrypted" qtype="choice" id="q_choice"&gt;
+        &lt;h4&gt;Welche Unterordner werden in der Dateistruktur von digitalen Skripten erwartet?&lt;/h4&gt;
+
+        &lt;div class="answers multiple"&gt;
+            &lt;label&gt;&lt;input val="Frage-1"&gt;assets&lt;/label&gt;
+            &lt;label&gt;&lt;input val="Frage-2"&gt;movies&lt;/label&gt;
+            &lt;label&gt;&lt;input val="Frage-3"&gt;img&lt;/label&gt;
+            &lt;label&gt;&lt;input val="Frage-4"&gt;css&lt;/label&gt;
+            &lt;label&gt;&lt;input val="Frage-5"&gt;lang&lt;/label&gt;
+        &lt;/div&gt;
+
+        &lt;div class="feedback correct"&gt;
+            Genau, diese Ordner werden auf jeden Fall benötigt. Sogar noch ein paar mehr.
+        &lt;/div&gt;
+        &lt;div class="feedback incorrect"&gt;
+            Deine Antwort ist leider nicht ganz richtig. Entweder fehlt ein Ordner, oder du hast einen ausgewählt, der nicht benötigt wird.
+        &lt;/div&gt;
+
+        &lt;!--
+        Hier werden alle richtigen Antwortmöglichkeiten angegeben.
+        Unverschlüsselt
+        --&gt;
+        &lt;a class="ans"&gt;assets&lt;/a&gt;
+        &lt;a class="ans"&gt;img&lt;/a&gt;
+        &lt;a class="ans"&gt;css&lt;/a&gt;
+    &lt;/div&gt;
+    </code></pre></section>
 
 <section name="Nicht zurücksetzbare Fragen" class="sub">
 

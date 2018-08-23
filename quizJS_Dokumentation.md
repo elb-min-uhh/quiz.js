@@ -342,6 +342,9 @@ Bereiche wie in dem Grundgerüst gezeigt aufteilen.
 ### Angabe der richtigen Antworten
 
 Für jede richtige Antwort wird genau ein _a_ Block verwendet.
+Möchte man die Antworten nicht verschlüsseln, gibt es dazu Möglichkeiten,
+die im Bereich _Nicht verschlüsselte Fragen_ unter
+_Erweiterbarkeit der normalen Funktionen_ erklärt werden.
 
     <!-- Verschlüsselt ist hier das Wort "answer" -->
     <a class="ans">693da517cf61c81742ef090221bfd5d6</a>
@@ -352,7 +355,7 @@ Eingabe, per md5 verschlüsselt. Natürlich sollte man hier nicht immer die
 unverschlüsselte Version direkt darüber schreiben. Dies ist nur als Hilfe
 gedacht.
 
-Zur generierung der MD5-Verschlüsselten Antworten eignet sich z.B.
+Zur Generierung der MD5-Verschlüsselten Antworten eignet sich z.B.
 <a href="http://www.md5-generator.de/">http://www.md5-generator.de/</a> . Man sollte darauf achten, keine zusätzlichen
 Leerzeichen oder Zeilenumbrüche dort einzugeben.
 
@@ -1849,6 +1852,54 @@ Ein Beispiel für eine unbewertete Frage:
         Im Normalfalls sind Elefanten grau und Lügen haben <i>kurze</i> Beine.
     </div>
 </div>
+
+### Nicht verschlüsselte Fragen
+
+Die korrekten Antworten müssen bei bewerteten Fragen als HD5 gehashte Werte
+angegeben werden. Das sorgt vor Allem für einen zusätzlichen Erstellungsaufwand.
+Möchte man nicht verhindern, dass Nutzer in dem Quelltext die korrekte Antwort
+lesen können, gibt es zwei einfache Möglichkeiten, dieses Hashing zu umgehen.
+
+#### Generell deaktivieren
+
+Möchte man für keine Frage verschlüsselte Antworten angeben, kann man per
+JavaScript Aufruf `quizJS.setEncrypted(false)` die Verschlüsselung deaktivieren.
+Das bedeutet, dass überall in den `<a class="ans">` direkt die unverschlüsselte
+Antwort hinterlegen kann.
+
+#### Fragenspezifisch deaktiveren
+
+Möchte man nur für einzelne Fragen die Verschlüsselung deaktiveren oder den
+JavaScript Aufruf umgehen kann man bei der Frage zusätzlich zu der Klasse
+`question` die Klasse `unencrypted` ergänzen:
+
+    <!-- hier steht die zusätzliche Klasse -->
+    <div class="question unencrypted" qtype="choice" id="q_choice">
+        <h4>Welche Unterordner werden in der Dateistruktur von digitalen Skripten erwartet?</h4>
+
+        <div class="answers multiple">
+            <label><input val="Frage-1">assets</label>
+            <label><input val="Frage-2">movies</label>
+            <label><input val="Frage-3">img</label>
+            <label><input val="Frage-4">css</label>
+            <label><input val="Frage-5">lang</label>
+        </div>
+
+        <div class="feedback correct">
+            Genau, diese Ordner werden auf jeden Fall benötigt. Sogar noch ein paar mehr.
+        </div>
+        <div class="feedback incorrect">
+            Deine Antwort ist leider nicht ganz richtig. Entweder fehlt ein Ordner, oder du hast einen ausgewählt, der nicht benötigt wird.
+        </div>
+
+        <!--
+        Hier werden alle richtigen Antwortmöglichkeiten angegeben.
+        Unverschlüsselt
+        -->
+        <a class="ans">assets</a>
+        <a class="ans">img</a>
+        <a class="ans">css</a>
+    </div>
 
 ### Nicht zurücksetzbare Fragen
 
